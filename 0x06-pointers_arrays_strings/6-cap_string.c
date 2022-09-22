@@ -17,7 +17,7 @@ char *cap_string(char *s)
 			{
 				s[i] = ' ';
 			}
-			else if (s[i] => 'a' && s[i] =< s[i])
+			else if (s[i] => 'a' && s[i] =< 'z')
 			{
 				s[i] = s[i] - 32;
 			}
