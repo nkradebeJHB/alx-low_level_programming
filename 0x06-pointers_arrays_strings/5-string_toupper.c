@@ -15,4 +15,4 @@ char *string_toupper(char *c)
 		i++;
 	}
 	return (c);
-}	
+}
