@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 /**
  * print_chessboard - prints the chessboard
  * @a: the board to print
