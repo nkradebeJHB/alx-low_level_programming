@@ -4,7 +4,7 @@
  * @i: base number to check
  * Return: natural square root of number base
  */
-int check_sqrt(int n ,int i)
+int check_sqrt(int n, int i)
 {
 	if (i * i == n)
 		return (i);
@@ -13,7 +13,7 @@ int check_sqrt(int n ,int i)
 	return (check_sqrt(n, i + 1));
 }
 /**
- * int _sqrt_recursion - returns the natural square root of a number.
+ * _sqrt_recursion - returns the natural square root of a number.
  * @n: number to check the square root
  * Return: -1 if n does not have a square root,
  * the square root if it exist
