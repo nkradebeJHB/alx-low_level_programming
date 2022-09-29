@@ -4,7 +4,7 @@
  * @base: base number to check
  * Return: natural square root of number base
  */
-int sqrt(int n , i)
+int sqrt(int n , int i)
 {
 	if (i * i == n)
 		return (i);
@@ -21,5 +21,5 @@ int sqrt(int n , i)
 
 int _sqrt_recursion(int n)
 {
-	return (sqrt(n , base));
+	return (sqrt(n , 1));
 }
