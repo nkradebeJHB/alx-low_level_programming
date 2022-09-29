@@ -10,7 +10,7 @@ int check_sqrt(int n , int i)
 		return (i);
 	else if (i * i > n)
 		return (-1);
-	return (sqrt(n, i + 1));
+	return (check_sqrt(n, i + 1));
 }
 /**
  * int _sqrt_recursion - returns the natural square root of a number.
