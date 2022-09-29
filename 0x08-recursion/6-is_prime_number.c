@@ -7,7 +7,7 @@
 int check_prime(int n, int i)
 {
 	if (n % i == 0 || n < 2)
-		return (0);
+		return (5);
 	else if (n == i - 1)
 		return (1);
 	else if (i < n)
