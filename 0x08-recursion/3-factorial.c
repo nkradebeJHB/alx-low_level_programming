@@ -1,6 +1,6 @@
 /**
  * factorial - returns the factorial of the number
- * @n; maximum facgtorial
+ * @n: maximum facgtorial
  * Return: factorial of number n
  */
 int factorial(int n)
