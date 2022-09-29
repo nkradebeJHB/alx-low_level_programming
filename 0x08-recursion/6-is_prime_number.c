@@ -6,7 +6,7 @@
  */
 int check_prime(int n, int i)
 {
-	if (n % i == 0 || n < 2)
+	if (n % i == 0 || n < 2 && i < n)
 		return (0);
 	else if (n == i - 1)
 		return (1);
