@@ -12,14 +12,14 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL)
 		s1 = "";
-	if s2 == NULL)
+	if (s2 == NULL)
 		s2 = "";
 	for (str1 = 0; s1[str1]; str1++)
 		;
 	for (str2 = 0; s2[str2]; str2++)
 		;
 	sizeBuffer = str1  + str2 + 1;
-	p = malloc(sizeof(char) * sizeBuffer);
+	ptr = malloc(sizeof(char) * sizeBuffer);
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; i < sizeBuffer; i++)
