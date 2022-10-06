@@ -3,22 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 /**
- * is_digit - check input is digit
- * @argc: argument count
- * @argv: argument vector
- * @i: int as an iterator for argv[]
- * @j: int as an iterator for argv[][]
- * Return: 0 on success, 1 on failure
- */
-int is_digit(int argc, char *argv[], int i, unsigned int j)
-{
-	for (i = 1; i <= argc; i++)
-		for (j = 0; argv[i][j] != '\0' && j < strlen(argv[i]); j++)
-			if (isdigit(argv[i][j]) == 0)
-				return (1);
-	return (0);
-}
-/**
  * main - adds arguments together
  * @argc: argument count
  * @argv: argument vector
@@ -26,16 +10,33 @@ int is_digit(int argc, char *argv[], int i, unsigned int j)
  */
 int main(int argc, char *argv[])
 {
-	int sum, i;
+	int sum, len, i, j;
+	char *ptr
 
 	sum = 0;
-	if (is_digit(argc, argv, 1, 0) == 1)
+	if (argc < 2)
 	{
-		printf("Input is not a digit\n");
-		return (1);
+		printf("0\n");
 	}
-	for (i = 1; i < argc; i++)
-		sum += atoi(argv[i]);
-	printf("%d\n", sum);
+	else
+	{
+		sum = 0;
+		for (i = 1; i < argc; i++)
+		{
+			ptr = argv[i];
+			len = strlen(ptr);
+			
+			for (j = 0; j < len; j++)
+			{
+				if (isdigit(*(ptr + j)) == 0)
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+			sum += atoi(argv[i]);
+		}
+		printf("%d\n", sum);
+	}
 	return (0);
 }
