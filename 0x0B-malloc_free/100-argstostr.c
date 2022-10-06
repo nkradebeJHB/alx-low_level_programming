@@ -25,6 +25,7 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; av[i][j]; j++, buffer++)
 			ptr[buffer] = av[i][j];
+		ptr[buffer] = '\n';
 		buffer++;
 	}
 	ptr[buffer] = '\0';
