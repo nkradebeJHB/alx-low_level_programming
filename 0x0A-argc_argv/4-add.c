@@ -10,7 +10,7 @@
  * @j: int as an iterator for argv[][]
  * Return: 0 on success, 1 on failure
  */
-int is_digit(int argc, char *argv[],int i, unsigned int j)
+int is_digit(int argc, char *argv[], int i, unsigned int j)
 {
 	for (i = 1; i <= argc; i++)
 		for (j = 0; argv[i][j] != '\0' && j < strlen(argv[i]); j++)
