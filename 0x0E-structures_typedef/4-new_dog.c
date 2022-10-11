@@ -18,6 +18,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		;
 	while (owner[newOwnerLen++])
 		;
+	if (name == NULL || onwer == NULL)
+		return (NULL);
 	newDog = malloc(sizeof(dog_t));
 	if (newDog == NULL)
 		return (NULL);
