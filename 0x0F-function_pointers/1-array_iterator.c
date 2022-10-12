@@ -8,6 +8,7 @@
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned int i;
+	void (*ptr)(int);
 
 	if (array == 0 || action == NULL)
 		return;
@@ -15,6 +16,8 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 	if (size <= 0)
 		return;
 
+	ptr = action;
+
 	for (i = 0; i < size; i++)
-		action(array[i]);
+		ptr(array[i]);
 }
