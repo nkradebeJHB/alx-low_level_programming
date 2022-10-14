@@ -9,14 +9,14 @@
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	unsigned int i;
+	int i;
 	int (*ptr)(int);
 
 	if (size <= 0)
 		return (-1);
 
 	if (array == NULL || cmp == NULL)
-		retun (-1);
+		return (-1);
 	ptr = cmp;
 	for (i = 0; i < size; i++)
 	{
