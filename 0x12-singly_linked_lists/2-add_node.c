@@ -9,17 +9,23 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	listint_t *address;
+	int i;
 
 	if (!head)
 		return (NULL);
 
 	address = malloc(sizeof(listin_t));
 
-	if (!address)
+	if (address == NULL)
 		return (NULL);
+	
+	for (i = 0; str[i];)
+		i++;
 
-	address->n = n;
+	address->str = str;
+	address->i = i;
 	address->next = *head;
 	*head = address;
+
 	return (address);
 }
