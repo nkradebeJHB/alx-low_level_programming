@@ -8,8 +8,9 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	listint_t *address;
-	int i;
+	list_t *address;
+	int len;
+	char *copy;
 
 	if (!head)
 		return (NULL);
@@ -18,12 +19,13 @@ list_t *add_node(list_t **head, const char *str)
 
 	if (address == NULL)
 		return (NULL);
-	
+	copy = strdup(str);
+
 	for (i = 0; str[i];)
 		i++;
 
-	address->str = str;
-	address->i = i;
+	address->str = copy;
+	address->len = len;
 	address->next = *head;
 
 	*head = address;
