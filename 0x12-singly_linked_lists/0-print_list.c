@@ -10,16 +10,13 @@ size_t print_list(const list_t *h)
 	size_t i = 0;
 	const list_t *position = h;
 
-	while (position != NULL)
+	while (position)
 	{
 		if (position->str != NULL)
-		{
-			_putchar(position->len);
-			_putchar(position->str);
-		}
+			printf("[%d] %s\n", position->len, position->str);
 		else
-			_putchar("[0] (nil)\n");
-		i += 1;
+			printf("[0] (nil)\n");
+		i++;
 		position = position->next;
 	}
 	return (i);
