@@ -21,8 +21,8 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	copy = strdup(str);
 
-	for (i = 0; str[i];)
-		i++;
+	for (len = 0; str[len];)
+		len++;
 
 	address->str = copy;
 	address->len = len;
