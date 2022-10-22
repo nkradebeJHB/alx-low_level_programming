@@ -7,7 +7,7 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *address, l_address;
+	list_t *address, *l_address;
 	int len;
 	char *copy;
 
