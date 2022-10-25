@@ -9,33 +9,31 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 {
-	listint_t *newlistint;
+	listint_t *newlistint, *curlistint;
 
-	if (head == NULL)
-		return (NULL);
+	curlistint = *head;
 	newlistint = malloc(sizeof(listint_t));
-
 	if (newlistint == NULL)
 		return (NULL);
 
 	newlistint->n = n;
 	if (index == 0)
 	{
-		newlistint->next = head;
+		newlistint->next = curlistint;
 		*head = newlistint;
 		return (*head);
 	}
 	while (index > 1)
 	{
-		head = head->next;
+		curlistint = curlistint->next;
 		index--;
-		if (!head)
+		if (!curlistint)
 		{
 			free(newlistint);
 			return (NULL);
 		}
 	}
-	newlistint->next = head->next;
-	head->next = newlistint;
+	newlistint->next = curlistint->next;
+	curlistint->next = newlistint;
 	return (newlistint);
 }
