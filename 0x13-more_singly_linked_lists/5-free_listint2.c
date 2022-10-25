@@ -11,7 +11,7 @@ void free_listint2(listint_t **head)
 	if (head == NULL)
 		return;
 	curlistint = *head;
-	while (surlistint != NULL)
+	while (curlistint != NULL)
 	{
 		temp = curlistint;
 		curlistint = curlistint->next;
