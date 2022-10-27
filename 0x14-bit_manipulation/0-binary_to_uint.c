@@ -11,6 +11,9 @@ unsigned int binary_to_uint(const char *b)
 	int str_len = 0;
 	int base = 1;
 
+	if (b == NULL)
+		return (0);
+
 	while (b[str_len] != '\0')
 	{
 		if (b[str_len] == '0' || b[str_len] == '1')
