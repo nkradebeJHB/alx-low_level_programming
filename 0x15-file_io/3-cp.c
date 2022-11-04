@@ -7,15 +7,15 @@
  * @filename: A pointer to the name of the file storing chars.
  * Return: A pointer to the newly-allocated buffer.
  */
-char *buffer(char *filename);
+char *buffer(char *filename)
 {
 	char *buf;
 
 	buf = malloc(sizeof(char) * 1024);
 	if (buf == NULL)
 	{
-		dprint(STDERR_FILENO,
-				"Error: Can't write to %s\n", file);
+		dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", filename);
 		exit(99);
 	}
 
@@ -39,6 +39,12 @@ void close_file(int fd)
 	}
 }
 
+/**
+ * main - Copies the contents of a file to another file.
+ * @argc: argument count
+ * @argv: pointer to pointer vector array
+ * Return: 0 on success
+ */
 int main(int argc, char *argv[])
 {
 	int original, copy, readfile, writefile;
@@ -50,8 +56,8 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	buf = buffer(atgv[2]);
-	orignal = open(argv[1], O_RDONLY);
+	buf = buffer(argv[2]);
+	original = open(argv[1], O_RDONLY);
 	readfile = read(original, buf, 1024);
 	copy = open(argv[2], O_CREAT |O_WRONLY | O_TRUNC, 0664);
 
@@ -75,7 +81,7 @@ int main(int argc, char *argv[])
 
 		readfile = read(original, buf, 1024);
 		copy = open(argv[2], O_WRONLY | O_APPEND);
-	} while (readfiel > 0);
+	} while (readfile > 0);
 
 	free(buf);
 	close_file(original);
