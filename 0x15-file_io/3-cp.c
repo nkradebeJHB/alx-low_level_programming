@@ -86,6 +86,5 @@ int main(int argc, char *argv[])
 	free(buf);
 	close_file(original);
 	close_file(copy);
-
 	return (0);
 }
