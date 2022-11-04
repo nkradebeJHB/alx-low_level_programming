@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 	buf = buffer(argv[2]);
 	original = open(argv[1], O_RDONLY);
 	readfile = read(original, buf, 1024);
-	copy = open(argv[2], O_CREAT |O_WRONLY | O_TRUNC, 0664);
+	copy = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
 		if (original == -1 || readfile == -1)
@@ -70,8 +70,8 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		writefile =write(copy, buf, readfile);
-		if (copy == -1 ||writefile == -1)
+		writefile = write(copy, buf, readfile);
+		if (copy == -1 || writefile == -1)
 		{
 			dprintf(STDERR_FILENO,
 					"Error: Can't write to %s\n", argv[2]);
