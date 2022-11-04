@@ -1,5 +1,5 @@
 #include "main.h"
-i
+#include <stddef.h>
 /**
  * read_textfile - reads a text file and prints it to
  * the POSIX standard output.
@@ -12,22 +12,21 @@ i
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *buffer = NULL;
-	size_t writefile;
-	int openfile, readfile;
+	char *buffer;
+	ssize_t writefile, openfile, readfile;
+
+	if (filename == NULL)
+		return (0);
 
 	buffer = malloc(sizeof(char) * letters + 1);
 	if (buffer ==  NULL)
-		return (0);
-
-	if (filename == NULL)
 		return (0);
 
 	openfile = open(filename, O_RDONLY);
 	readfile = read(openfile, buffer, letters);
 	writefile = write(STDOUT_FILENO, buffer, readfile);
 
-	if (openfile == -1 || readfile == -1 || writefile != readfile)
+	if (openfile == -1 || readfile == -1 || writefile == -1 || writefile != readfile)
 	{
 		free(buffer);
 		return (0);
