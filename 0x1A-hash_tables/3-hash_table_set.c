@@ -17,6 +17,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (*key == '\0' || value == NULL || key == NULL)
 		return (0);
 	dup_value = strdup(value);
+	if (dup_value == NULL)
+		return (0);
 
 	i = key_index((const unsigned char *)key, ht->size);
 
