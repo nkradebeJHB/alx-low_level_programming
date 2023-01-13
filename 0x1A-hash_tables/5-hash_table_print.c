@@ -8,7 +8,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i = 0;
 	hash_node_t *node;
-	char space = "";
+	char *space = "";
 
 	if (!ht || !ht->array)
 		return;
@@ -25,5 +25,5 @@ void hash_table_print(const hash_table_t *ht)
 		}
 		i++;
 	}
-	putchar("}");
+	puts("}");
 }
